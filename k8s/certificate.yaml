@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: fib-brandon-heath-com-tls
+spec:
+  secretName: fib-brandon-heath-com
+  issuerRef: 
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: fib.brandon-heath.com
+  dnsNames:
+    - fib.brandon-heath.com
+    - www.fib.brandon-heath.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - fib.brandon-heath.com
+          - www.fib.brandon-heath.com

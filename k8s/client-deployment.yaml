@@ -14,7 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: brandonetes/multi-client
-          resources:
+          image: stephengrider/multi-client
           ports:
             - containerPort: 3000
